@@ -3,8 +3,8 @@ rawdir = 'E:\project\BNU_2015\behavior data\tables\handness\origin' ;
 
 %------------------------------06级数据，引用了06_face questionnaire.xlsx,SBSOD raw data 06g&08g.xlsx，BIS_06.xlsx的数据---------------------------------------------%
 %06级face数据
-[Nface6 Tface6] = xlsread(fullfile(rawdir,'06_face questionnaire_raw'),2);
-hand_face6 = Nface6(:,4);
+[Nface6 Tface6] = xlsread(fullfile(rawdir,'06_face questionnaire'),1);
+hand_face6 = Nface6(:,5);
 id_face6 = Tface6(:,1);
 id_face6(1,:) = [];
 id_face6 = cell2mat(id_face6);id_face6(:,1)=[];id_face6 = str2num(id_face6);
@@ -29,7 +29,7 @@ hand_bis6(isnan(hand_bis6))=0;
 %08级sbsod数据
 [Nsbsod8 Tsbsod8] = xlsread(fullfile(rawdir,'SBSOD raw data 06g&08g'),2);
 Tsbsod8(1,:) = [];
-hand_sbsod8 = Nsbsod8(:,13);
+hand_sbsod8 = Nsbsod8(:,11);
 name_sbsod8 = Tsbsod8(:,2);
 hand_sbsod8(isnan(hand_sbsod8))=0;
 
